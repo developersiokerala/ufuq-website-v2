@@ -123,6 +123,20 @@ const Hero = () => {
                         <div className="ufuq-letter ufq-q">Q</div>
                       </div>
                     </div>
+
+                    {/* NEW: Intermediate Ribs for Volume */}
+                    <div className="wireframe-face wireframe-mid-1">
+                       <div className="wireframe-edge wireframe-edge-top"></div>
+                       <div className="wireframe-edge wireframe-edge-right"></div>
+                       <div className="wireframe-edge wireframe-edge-bottom"></div>
+                       <div className="wireframe-edge wireframe-edge-left"></div>
+                    </div>
+                    <div className="wireframe-face wireframe-mid-2">
+                       <div className="wireframe-edge wireframe-edge-top"></div>
+                       <div className="wireframe-edge wireframe-edge-right"></div>
+                       <div className="wireframe-edge wireframe-edge-bottom"></div>
+                       <div className="wireframe-edge wireframe-edge-left"></div>
+                    </div>
                     {/* Enhanced internal structural planes with cosmic elements */}
                     <div className="internal-structure">
                       <div className="structure-plane structure-plane-1">
