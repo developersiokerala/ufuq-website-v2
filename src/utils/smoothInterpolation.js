@@ -1,0 +1,8 @@
+/**
+ * Clamp a value between min and max
+ */
+export const clamp = (value, min, max) => {
+  return Math.min(Math.max(value, min), max)
+}
+
+
