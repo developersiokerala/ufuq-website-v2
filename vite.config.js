@@ -10,8 +10,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'animation-vendor': ['framer-motion'],
-          'animation-vendor-legacy': ['gsap']
+          'animation-vendor': ['framer-motion']
         }
       }
     },
