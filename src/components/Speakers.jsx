@@ -159,7 +159,7 @@ const Speakers = () => {
       
       <div ref={headerRef} className="text-center mb-16 reveal">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">Speakers</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">Learn from industry leaders and renowned researchers shaping the future of science.</p>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">Learn from industry leaders and renowned researchers reimagining the conventional paradigms of Modern Science.</p>
       </div>
 
       {/* Mobile: Horizontal Scrollable Carousel */}

@@ -128,7 +128,7 @@ const Footer = () => {
                 {/* Social Media Icons */}
                 <div className="flex gap-4">
                   <a 
-                    href="#" 
+                    href="https://www.facebook.com/share/1AVfQw4owP/" 
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-indigo-500/20 text-white hover:text-indigo-400 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     aria-label="Facebook"
                   >
@@ -146,7 +146,7 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.instagram.com/ufuq.stf?igsh=MXUyYWVtaXRubWJudw==" 
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-indigo-500/20 text-white hover:text-indigo-400 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     aria-label="Instagram"
                   >

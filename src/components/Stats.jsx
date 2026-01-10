@@ -5,7 +5,7 @@ const Stats = () => {
   const ref = useReveal()
 
   const stats = [
-    { value: '2,000+', label: 'Delegates' },
+    { value: '4,000+', label: 'Delegates' },
     { value: '50+', label: 'Guests' },
     { value: '20+', label: 'Sessions' },
     { value: '05+', label: 'Stages' },

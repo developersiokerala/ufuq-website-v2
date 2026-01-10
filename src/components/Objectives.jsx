@@ -60,7 +60,7 @@ const Objectives = () => {
 
       <div ref={sectionRef} className="text-center mb-20 reveal">
         <h2 className="text-3xl md:text-5xl font-bold mb-6">Objectives of Fest</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto text-lg">Exploring the intersection of Islamic thought and scientific innovation. Join us for a transformative journey through the rich legacy of Islamic science and its relevance to the contemporary world.</p>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">Join us for a transformative journey through the rich legacy of Islamic science and its relevance to the contemporary world.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -547,7 +547,7 @@ const Hero = () => {
               <span className="gradient-text">Technology Fest</span>
             </h1>
             <p className="text-base md:text-lg text-gray-300 mb-10 max-w-lg leading-relaxed">
-              Resisting both uncritical acceptance and blanket refusal of advances in science and technology, SIO seeks to critically engage with them -- questioning, redefining, and reshaping their course, while remaining grounded in the foundations of Islam.
+              Resisting both uncritical acceptance and blanket refusal of advances in science and technology, SIO seeks to critically engage with them - questioning, redefining, and reshaping their course, while remaining grounded in the foundations of Islam.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="https://ufuqstfsiokerala.eventhex.ai/#tickets" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 rounded-xl font-semibold text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]" aria-label="Register for UFUQ 2026">Register Now</a>
