@@ -551,94 +551,17 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="https://ufuqstfsiokerala.eventhex.ai/#tickets" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 rounded-xl font-semibold text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]" aria-label="Register for UFUQ 2026">Register Now</a>
-              <button className="px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-medium text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]" aria-label="View event brochure">View Brochure</button>
+              <a
+                href="/brochure.pdf"
+                download
+                className="px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-medium text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]"
+                aria-label="Download event brochure"
+              >
+                View Brochure
+              </a>
             </div>
           </div>
 
-          {/* New Section
-          <div ref={middleRef} className="hidden lg:flex items-center justify-center reveal delay-[200ms]">
-            <div className="relative w-full max-w-2xl lg:max-w-4xl xl:max-w-5xl">
-              {/* Glow Background */}
-              {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="cube-glow"></div>
-              </div> */}
-              
-              {/* Floating Cube Image - Double buffered for smooth transitions */}
-              {/* <div className="relative flex items-center justify-center"> */}
-                {/* Primary image */}
-                {/* <img
-                  ref={imgRef}
-                  src={framePath}
-                  alt="Rotating Cube"
-                  draggable="false"
-                  className={`w-full h-auto max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl absolute cube-alive ${!cubeActivated ? 'cursor-pointer hover:opacity-100' : ''}`}
-                  style={{
-                    opacity: cubeActivated ? (initialFrameLoaded ? 0.85 : 0) : 0.85,
-                    imageRendering: 'auto',
-                    willChange: 'opacity, transform, filter',
-                    backfaceVisibility: 'hidden',
-                    transition: isInteractive ? 'opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1)' : 'opacity 0.3s ease-out',
-                    WebkitBackfaceVisibility: 'hidden',
-                    WebkitFontSmoothing: 'antialiased',
-                    MozOsxFontSmoothing: 'grayscale',
-                    WebkitUserDrag: 'none',
-                    userSelect: 'none',
-                    pointerEvents: isInteractive ? 'auto' : (cubeActivated ? 'none' : 'auto')
-                  }}
-                  onLoad={handleImageLoad}
-                  onError={handleImageError}
-                  onClick={handleCubeClick}
-                  onDragStart={(e) => e.preventDefault()}
-                  loading="eager"
-                  decoding="async"
-                /> */}
-                {/* Secondary image for crossfade - only show when cube is activated */}
-                {/* {cubeActivated && (
-                <img
-                  ref={nextImgRef}
-                  src={nextFramePath}
-                  alt=""
-                    draggable="false"
-                  className={`w-full h-auto max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl ${isInteractive ? 'cube-alive' : ''}`}
-                  style={{
-                    opacity: 0,
-                    imageRendering: 'auto',
-                      willChange: 'opacity, transform, filter',
-                    backfaceVisibility: 'hidden',
-                    transition: 'opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1)',
-                    pointerEvents: 'none',
-                    WebkitBackfaceVisibility: 'hidden',
-                    WebkitFontSmoothing: 'antialiased',
-                      MozOsxFontSmoothing: 'grayscale',
-                      WebkitUserDrag: 'none',
-                      userSelect: 'none'
-                  }}
-                  onLoad={handleNextImageLoad}
-                    onDragStart={(e) => e.preventDefault()}
-                  loading="eager"
-                  decoding="async"
-                />
-                )} */}
-                
-                {/* Loading Progress Indicator (shown during preload) - Below sprite */}
-                {/* {cubeActivated && !isInteractive && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-32 h-1.5 bg-white/10 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300 ease-out"
-                          style={{ width: `${loadingProgress}%` }}
-                        />
-                      </div>
-                      <span className="text-xs text-gray-300 font-medium min-w-[4rem] text-right">
-                        {loadingFrame + 1}/{totalFrames} ({loadingProgress}%)
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div> */} 
           {/* New Section - Lightweight Wireframe Cube */}
           <div ref={middleRef} className="hidden lg:flex items-center justify-center reveal delay-[200ms]">
             <div className="relative w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl">
