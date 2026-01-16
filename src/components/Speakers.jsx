@@ -21,36 +21,36 @@ const Speakers = () => {
   // Memoize speakers data to prevent recalculation on re-renders
   const speakers = useMemo(() => [
     {
-      initials: 'SK',
-      name: 'Sunandan K N',
-      affiliation: 'Azim Premji University',
-      description: 'Researches the history and sociology of caste, knowledge production, and science; holds advanced degrees in sociology and science policy.',
+      initials: 'CH',
+      name: 'Charles Hirschkind',
+      affiliation: 'University of California, Berkeley',
+      description: 'Chair of Anthropology at UC Berkeley. His work explores religious practice, media, and political community in the Middle East and Europe. He is the author of The Ethical Soundscape and co-editor of Powers of the Secular Modern.',
       gradient: 'from-indigo-500 to-purple-600',
-      image: getImagePath('/images/speakers/sunandan-k-n.webp')
+      image: getImagePath('/images/speakers/charles-hirschkind.webp')
     },
     {
-      initials: 'SM',
-      name: 'Dr. Salih M',
-      affiliation: 'Govt. Arts & Science College',
-      description: 'Completed his MPhil and PhD at Jawaharlal Nehru University, Delhi. His research interests focus on the relationship between technology and art.',
+      initials: 'MK',
+      name: 'Dr. M. Zaki Kirmani',
+      affiliation: 'Founder, Centre for Studies on Science',
+      description: 'Founder-chairman of the Centre for Studies on Science. Shifted from heterocyclic chemistry to developing a philosophical foundation for science based on Qur\'anic values, advocating for ethically responsible science rooted in Islamic principles.',
       gradient: 'from-purple-500 to-pink-600',
-      image: getImagePath('/images/speakers/dr-salih-m.webp')
+      image: getImagePath('/images/speakers/dr-m-zaki-kirmani.webp')
     },
     {
-      initials: 'WR',
-      name: 'Wafa Razak',
-      affiliation: 'PhD Candidate, JNU',
-      description: 'Explores how biomedical knowledge is created and practiced in everyday settings, focusing on the interplay between science and society.',
+      initials: 'MA',
+      name: 'Dr. Mohammad Saud Afzal',
+      affiliation: 'Associate Professor, IIT Kharagpur',
+      description: 'Associate Professor specializing in Computational Fluid Dynamics, Coastal Engineering, and Water Resource Management. Holds a PhD from Norwegian University of Science and Technology and a Masters from Delft University of Technology.',
       gradient: 'from-emerald-500 to-teal-600',
-      image: getImagePath('/images/speakers/wafa-razak.webp')
+      image: getImagePath('/images/speakers/dr-mohammad-saud-afzal.webp')
     },
     {
-      initials: 'AA',
-      name: 'Dr. Arun Ashokan',
-      affiliation: 'ETH Zurich (Former)',
-      description: 'Works on the history of vernacular mathematics in medieval South India. Completed postdoctoral research at ETH Zurich.',
+      initials: 'CR',
+      name: 'C.P. Rajendran',
+      affiliation: 'National Institute of Advanced Studies, Bengaluru',
+      description: 'Geologist and adjunct professor specializing in seismotectonics and tsunami hazards in the Indian subcontinent. Director of the Consortium for Sustainable Development, Connecticut, U.S.A.',
       gradient: 'from-blue-500 to-indigo-600',
-      image: getImagePath('/images/speakers/dr-arun-ashokan.webp')
+      image: getImagePath('/images/speakers/cp-rajendran.webp')
     },
     {
       initials: 'SH',
@@ -61,12 +61,36 @@ const Speakers = () => {
       image: getImagePath('/images/speakers/shameerali-hudawi.webp')
     },
     {
-      initials: 'MS',
-      name: 'Dr. Muhammed Shareef',
-      affiliation: 'IIT Palakkad (Former)',
-      description: 'Holds a Master\'s degree in Philosophy from the University of Hyderabad. Research interests lie in the field of philosophy.',
+      initials: 'TS',
+      name: 'Dr. T. V. Sajeev',
+      affiliation: 'Chief Scientist, Kerala Forest Research Institute',
+      description: 'Chief Scientist with 26+ years in environmental science, specializing in forest health and invasive species management.',
       gradient: 'from-cyan-500 to-blue-600',
-      image: getImagePath('/images/speakers/dr-muhammed-shareef.webp')
+      image: getImagePath('/images/speakers/dr-tv-sanjeev.webp')
+    },
+    {
+      initials: 'SK',
+      name: 'Sunandan K N',
+      affiliation: 'Azim Premji University',
+      description: 'Researches the history and sociology of caste, knowledge production, and science; holds advanced degrees in sociology and science policy.',
+      gradient: 'from-indigo-500 to-purple-600',
+      image: getImagePath('/images/speakers/sunandan-k-n.webp')
+    },
+    {
+      initials: 'KW',
+      name: 'Karuna Dietrich Wielenga',
+      affiliation: 'Historian, Azim Premji University',
+      description: 'Historian specializing in the economic and social history of modern South Asia, with a focus on labour history and the informal sector. Former Newton International Fellow at the University of Oxford.',
+      gradient: 'from-purple-500 to-pink-600',
+      image: getImagePath('/images/speakers/karuna-dietrich-wielenga.webp')
+    },
+    {
+      initials: 'SH',
+      name: 'Syed Sadatullah Husaini',
+      affiliation: 'Ameer, Jamaat-e-Islami Hind',
+      description: 'President (Ameer) of Jamaat-e-Islami Hind and Vice President of All India Muslim Personal Law Board. Former National President of Students\' Islamic Organisation of India. Director of JIH\'s Study and Research Department. Electronics engineering graduate and columnist.',
+      gradient: 'from-emerald-500 to-teal-600',
+      image: getImagePath('/images/speakers/syed-sadatullah-husaini.webp')
     },
   ], [])
 
