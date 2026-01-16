@@ -553,7 +553,6 @@ const Hero = () => {
               <a href="https://ufuqstfsiokerala.eventhex.ai/#tickets" target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 rounded-xl font-semibold text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]" aria-label="Register for UFUQ 2026">Register Now</a>
               <a
                 href="/brochure.pdf"
-                download
                 className="px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-medium text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]"
                 aria-label="Download event brochure"
               >
