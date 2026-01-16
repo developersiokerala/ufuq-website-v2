@@ -266,6 +266,22 @@ const Speakers = () => {
           <SpeakerCard key={`${speaker.name}-${speaker.initials}`} speaker={speaker} />
         ))}
       </div>
+
+      {/* View All Button */}
+      <div className="mt-12 md:mt-16 flex justify-center">
+        <a
+          href="https://ufuq.siokerala.org/speakers"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-sm md:text-base text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a] inline-flex items-center gap-2 min-h-[44px] touch-manipulation"
+          aria-label="View all speakers"
+        >
+          View All
+          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
     </section>
   )
 }
