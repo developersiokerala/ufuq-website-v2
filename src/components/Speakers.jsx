@@ -270,7 +270,7 @@ const Speakers = () => {
       {/* View All Button */}
       <div className="mt-12 md:mt-16 flex justify-center">
         <a
-          href="https://ufuq.siokerala.org/speakers"
+          href="https://ufuqstfsiokerala.eventhex.ai/speakers"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-sm md:text-base text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a] inline-flex items-center gap-2 min-h-[44px] touch-manipulation"
