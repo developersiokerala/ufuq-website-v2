@@ -63,13 +63,188 @@ const EVENTS = [
       location: 'Online',
       duration: '04 Days'
     },
+    // Day 1: Main Events
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'Inauguration Ceremony',
+      speakers: [],
+      date: 'Day 1 - 09:30 am',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'State Level Inter-School Quiz Competition',
+      speakers: [],
+      date: 'Day 1 - 01:00 pm',
+      location: 'Stages 1 & 2',
+      duration: null
+    },
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'Ishal Night',
+      speakers: [],
+      date: 'Day 1 - 08:45 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    // Day 2: Main Events
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'Mega Quiz',
+      speakers: [],
+      date: 'Day 2 - 11:15 am',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'Performative Play',
+      speakers: [],
+      date: 'Day 2 - 03:00 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Main Events',
+      level: 'All Level',
+      title: 'Conclusion Ceremony',
+      speakers: [],
+      date: 'Day 2 - 03:45 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    // Day 1: Panel Discussions
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Science and Society',
+      speakers: [],
+      date: 'Day 1 - 11:30 am',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'When Technology Leads Oppression and Genocide',
+      speakers: [],
+      date: 'Day 1 - 11:45 am',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Thinking on Curriculum of Science and Technology',
+      speakers: [],
+      date: 'Day 1 - 2:30 pm',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Islam, Rationality and Atheism: Framing Dialogues',
+      speakers: [],
+      date: 'Day 1 - 3:20 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Culture Art Resistance: Occupying New Arenas',
+      speakers: [],
+      date: 'Day 1 - 4:10 pm',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Islamic Studentdom: Developing Creative Campus Environments',
+      speakers: [],
+      date: 'Day 1 - 4:30 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    // Day 2: Panel Discussions
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Technology and Indigenous Crafts: Exploring Communitarian Expressions',
+      speakers: [],
+      date: 'Day 2 - 9:30 am',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Islam, Science and Technology: Exploring Muslim Engagements',
+      speakers: [],
+      date: 'Day 2 - 9:40 am',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Chat with Guest',
+      speakers: [],
+      date: 'Day 2 - 11:15 am',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Workshop: Nature, Culture and Gender (Scientific Discourses & Practices)',
+      speakers: [],
+      date: 'Day 2 - 11:30 am',
+      location: 'Stage 3',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Chat with Habel Anwar',
+      speakers: [],
+      date: 'Day 2 - 12:10 pm',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Islamic Legacy and Civilization: Exploring the Imagination of a Golden Age',
+      speakers: [],
+      date: 'Day 2 - 12:30 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Panel Discussion',
+      level: 'All Level',
+      title: 'Reimagining Climate Change: Ethics, Ecology, and Secular Concerns',
+      speakers: [],
+      date: 'Day 2 - 2:00 pm',
+      location: 'Stage 2',
+      duration: null
+    },
   ]
 
-const FILTERS = ['All Event', 'Pre Event', 'Panel Discussion', 'Keynote']
+const FILTERS = ['Main Events', 'Pre Event', 'Panel Discussion']
 
 const Events = () => {
   const headerRef = useReveal()
-  const [activeFilter, setActiveFilter] = useState('All Event')
+  const [activeFilter, setActiveFilter] = useState('Main Events')
   const containerRef = useRef(null)
   const [itemWidth, setItemWidth] = useState(280)
   const [position, setPosition] = useState(0)
@@ -77,9 +252,7 @@ const Events = () => {
   const [isAnimating, setIsAnimating] = useState(false)
 
   const filteredEvents = useMemo(() => 
-    activeFilter === 'All Event' 
-      ? EVENTS 
-      : EVENTS.filter(event => event.type === activeFilter),
+    EVENTS.filter(event => event.type === activeFilter),
     [activeFilter]
   )
 
@@ -278,6 +451,22 @@ const Events = () => {
         {filteredEvents.map((event, index) => (
           <EventCard key={`${event.title}-${event.date}`} event={event} index={index} />
         ))}
+      </div>
+
+      {/* View All Button */}
+      <div className="mt-12 md:mt-16 flex justify-center">
+        <a
+          href="https://ufuqstfsiokerala.eventhex.ai/sessions"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-sm md:text-base text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a] inline-flex items-center gap-2 min-h-[44px] touch-manipulation"
+          aria-label="View all events"
+        >
+          View All
+          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
       </div>
     </section>
   )
