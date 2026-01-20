@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 import { getImagePath } from '../utils/imagePath'
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
@@ -137,17 +138,15 @@ const RecentActivity = () => {
       <div ref={ref} className="reveal mb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <h2 className="text-2xl font-bold border-l-4 border-indigo-500 pl-4">What we've been up to lately</h2>
-          <a 
-            href="https://ufuq.siokerala.org/hackathon" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/hackathon"
             className="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-2 transition-colors group"
           >
             <span>Hackathon Archive</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
-          </a>
+          </Link>
         </div>
         {/* Mobile: Horizontal Scrollable Carousel */}
         <div 
