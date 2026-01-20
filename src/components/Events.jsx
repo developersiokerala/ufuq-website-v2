@@ -63,69 +63,169 @@ const EVENTS = [
       location: 'Online',
       duration: '04 Days'
     },
-    // Day 1: Main Events
+    // January 25: Presentations / Talks / Workshops / Quizzes
     {
-      type: 'Main Events',
+      type: 'Presentation',
       level: 'All Level',
       title: 'Inauguration Ceremony',
       speakers: [],
-      date: 'Day 1 - 09:30 am',
+      date: 'January 25 - 10:00 am – 12:00 pm',
+      location: 'Inauguration Stage',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Workshop on Islam and Science: Philosophical and Theological Debates',
+      speakers: [],
+      date: 'January 25 - 2:30 pm – 4:30 pm',
+      location: 'Workshop Stage',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Workshop on Sounding out the Past: Andalucismo, Flamenco, Worldmaking',
+      speakers: [],
+      date: 'January 25 - 2:30 pm – 5:00 pm',
+      location: 'Workshop Stage 3',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'State-level Inter School Quiz Competition (HS)',
+      speakers: [],
+      date: 'January 25 - 1:15 pm – 3:30 pm',
+      location: 'Quiz Stage',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'State-level Inter School Quiz Competition (HSS)',
+      speakers: [],
+      date: 'January 25 - 1:15 pm – 2:45 pm',
+      location: 'Quiz Stage 2',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Nasweeha',
+      speakers: [],
+      date: 'January 25 - 3:50 pm – 4:00 pm',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Nasweeha',
+      speakers: [],
+      date: 'January 25 - 7:00 pm – 7:10 pm',
       location: 'Stage 1',
       duration: null
     },
     {
-      type: 'Main Events',
+      type: 'Presentation',
       level: 'All Level',
-      title: 'State Level Inter-School Quiz Competition',
+      title: 'Aspiring Taqwa in an Advanced Technological World',
       speakers: [],
-      date: 'Day 1 - 01:00 pm',
-      location: 'Stages 1 & 2',
-      duration: null
-    },
-    {
-      type: 'Main Events',
-      level: 'All Level',
-      title: 'Ishal Night',
-      speakers: [],
-      date: 'Day 1 - 08:45 pm',
+      date: 'January 25 - 7:15 pm – 8:00 pm',
       location: 'Stage 1',
       duration: null
     },
-    // Day 2: Main Events
     {
-      type: 'Main Events',
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Technological Advancement: Discussing Future and Ethics',
+      speakers: [],
+      date: 'January 25 - 8:15 pm – 8:45 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Sci Talk – My Journey',
+      speakers: [],
+      date: 'January 25 - 8:15 pm – 8:45 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    // January 26: Presentations / Talks / Workshops / Quizzes
+    {
+      type: 'Presentation',
       level: 'All Level',
       title: 'Mega Quiz',
       speakers: [],
-      date: 'Day 2 - 11:15 am',
+      date: 'January 26 - 11:15 am',
       location: 'Stage 1',
       duration: null
     },
     {
-      type: 'Main Events',
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Nasweeha',
+      speakers: [],
+      date: 'January 26 - 11:45 am',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Tech Talk: Techies Assemble',
+      speakers: [],
+      date: 'January 26 - 12:00 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'From Classroom to Quantum Computing: Careers, Curiosity, and Living with Uncertainty',
+      speakers: [],
+      date: 'January 26 - 1:00 pm',
+      location: 'Stage 2',
+      duration: null
+    },
+    {
+      type: 'Presentation',
+      level: 'All Level',
+      title: 'Conclusion Ceremony Speech',
+      speakers: [],
+      date: 'January 26 - 3:45 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    // Cultural Programs
+    {
+      type: 'Cultural Program',
+      level: 'All Level',
+      title: 'Ishal Night',
+      speakers: [],
+      date: 'January 25 - 8:45 pm – 11:00 pm',
+      location: 'Stage 1',
+      duration: null
+    },
+    {
+      type: 'Cultural Program',
       level: 'All Level',
       title: 'Performative Play',
       speakers: [],
-      date: 'Day 2 - 03:00 pm',
+      date: 'January 26 - 3:00 pm',
       location: 'Stage 1',
       duration: null
     },
-    {
-      type: 'Main Events',
-      level: 'All Level',
-      title: 'Conclusion Ceremony',
-      speakers: [],
-      date: 'Day 2 - 03:45 pm',
-      location: 'Stage 1',
-      duration: null
-    },
-    // Day 1: Panel Discussions
+    // January 25: Panel Discussions
     {
       type: 'Panel Discussion',
       level: 'All Level',
       title: 'Science and Society',
       speakers: [],
-      date: 'Day 1 - 11:30 am',
+      date: 'January 25 - 11:45 am – 1:15 pm',
       location: 'Stage 2',
       duration: null
     },
@@ -134,7 +234,7 @@ const EVENTS = [
       level: 'All Level',
       title: 'When Technology Leads Oppression and Genocide',
       speakers: [],
-      date: 'Day 1 - 11:45 am',
+      date: 'January 25 - 12:15 pm – 1:10 pm',
       location: 'Stage 1',
       duration: null
     },
@@ -143,7 +243,7 @@ const EVENTS = [
       level: 'All Level',
       title: 'Thinking on Curriculum of Science and Technology',
       speakers: [],
-      date: 'Day 1 - 2:30 pm',
+      date: 'January 25 - 2:50 pm – 4:05 pm',
       location: 'Stage 2',
       duration: null
     },
@@ -152,16 +252,16 @@ const EVENTS = [
       level: 'All Level',
       title: 'Islam, Rationality and Atheism: Framing Dialogues',
       speakers: [],
-      date: 'Day 1 - 3:20 pm',
+      date: 'January 25 - 3:40 pm – 4:50 pm',
       location: 'Stage 1',
       duration: null
     },
     {
       type: 'Panel Discussion',
       level: 'All Level',
-      title: 'Culture Art Resistance: Occupying New Arenas',
+      title: 'Culture, Art, Resistance: Occupying New Arenas',
       speakers: [],
-      date: 'Day 1 - 4:10 pm',
+      date: 'January 25 - 4:10 pm – 5:30 pm',
       location: 'Stage 2',
       duration: null
     },
@@ -170,17 +270,17 @@ const EVENTS = [
       level: 'All Level',
       title: 'Islamic Studentdom: Developing Creative Campus Environments',
       speakers: [],
-      date: 'Day 1 - 4:30 pm',
+      date: 'January 25 - 4:30 pm – 5:45 pm',
       location: 'Stage 1',
       duration: null
     },
-    // Day 2: Panel Discussions
+    // January 26: Panel Discussions
     {
       type: 'Panel Discussion',
       level: 'All Level',
-      title: 'Technology and Indigenous Crafts: Exploring Communitarian Expressions',
+      title: 'Technology and Indigenous Crafts: Communitarian Expressions',
       speakers: [],
-      date: 'Day 2 - 9:30 am',
+      date: 'January 26 - 9:30 am',
       location: 'Stage 2',
       duration: null
     },
@@ -189,7 +289,7 @@ const EVENTS = [
       level: 'All Level',
       title: 'Islam, Science and Technology: Exploring Muslim Engagements',
       speakers: [],
-      date: 'Day 2 - 9:40 am',
+      date: 'January 26 - 9:40 am',
       location: 'Stage 1',
       duration: null
     },
@@ -198,16 +298,16 @@ const EVENTS = [
       level: 'All Level',
       title: 'Chat with Guest',
       speakers: [],
-      date: 'Day 2 - 11:15 am',
+      date: 'January 26 - 11:15 am',
       location: 'Stage 2',
       duration: null
     },
     {
       type: 'Panel Discussion',
       level: 'All Level',
-      title: 'Workshop: Nature, Culture and Gender (Scientific Discourses & Practices)',
+      title: 'Nature, Culture and Gender: Scientific Discourses and Practices',
       speakers: [],
-      date: 'Day 2 - 11:30 am',
+      date: 'January 26 - 11:30 am',
       location: 'Stage 3',
       duration: null
     },
@@ -216,16 +316,16 @@ const EVENTS = [
       level: 'All Level',
       title: 'Chat with Habel Anwar',
       speakers: [],
-      date: 'Day 2 - 12:10 pm',
+      date: 'January 26 - 12:10 pm',
       location: 'Stage 2',
       duration: null
     },
     {
       type: 'Panel Discussion',
       level: 'All Level',
-      title: 'Islamic Legacy and Civilization: Exploring the Imagination of a Golden Age',
+      title: 'Islamic Legacy and Civilization: Imagining a Golden Age',
       speakers: [],
-      date: 'Day 2 - 12:30 pm',
+      date: 'January 26 - 12:30 pm',
       location: 'Stage 1',
       duration: null
     },
@@ -234,27 +334,29 @@ const EVENTS = [
       level: 'All Level',
       title: 'Reimagining Climate Change: Ethics, Ecology, and Secular Concerns',
       speakers: [],
-      date: 'Day 2 - 2:00 pm',
+      date: 'January 26 - 2:00 pm',
       location: 'Stage 2',
       duration: null
     },
   ]
 
-const FILTERS = ['Main Events', 'Pre Event', 'Panel Discussion']
+const FILTERS = ['All Events', 'Pre Event', 'Panel Discussion', 'Presentation', 'Cultural Program']
 
 const Events = () => {
   const headerRef = useReveal()
-  const [activeFilter, setActiveFilter] = useState('Main Events')
+  const [activeFilter, setActiveFilter] = useState('All Events')
   const containerRef = useRef(null)
   const [itemWidth, setItemWidth] = useState(280)
   const [position, setPosition] = useState(0)
   const x = useMotionValue(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
-  const filteredEvents = useMemo(() => 
-    EVENTS.filter(event => event.type === activeFilter),
-    [activeFilter]
-  )
+  const filteredEvents = useMemo(() => {
+    if (activeFilter === 'All Events') {
+      return EVENTS.slice(0, 9)
+    }
+    return EVENTS.filter(event => event.type === activeFilter)
+  }, [activeFilter])
 
   // Update item width on resize (mobile only) - optimized with throttling
   useEffect(() => {

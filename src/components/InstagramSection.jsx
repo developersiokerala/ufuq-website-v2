@@ -21,7 +21,7 @@ const InstagramSection = () => {
   ]
 
   return (
-    <section ref={ref} className="pt-0 pb-20 px-6 max-w-7xl mx-auto reveal" aria-label="Follow us on Instagram">
+    <section ref={ref} className="pt-0 pb-20 px-6 max-w-7xl mx-auto reveal md:hidden" aria-label="Follow us on Instagram">
       {/* Header Section */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">

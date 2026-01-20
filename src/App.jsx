@@ -10,6 +10,7 @@ const Events = lazy(() => import('./components/Events'))
 const Speakers = lazy(() => import('./components/Speakers'))
 const RecentActivity = lazy(() => import('./components/RecentActivity'))
 const QuoteSection = lazy(() => import('./components/QuoteSection'))
+const Partners = lazy(() => import('./components/Partners'))
 const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Events />
           <Speakers />
           <RecentActivity />
+          <Partners />
           <QuoteSection />
         </Suspense>
       </main>
