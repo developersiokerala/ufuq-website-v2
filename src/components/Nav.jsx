@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { smoothScrollTo } from '../utils/smoothScroll'
 import { getImagePath } from '../utils/imagePath'
 import GradualBlur from './GradualBlur'
@@ -7,17 +8,28 @@ const SECTIONS = ['home', 'about', 'events', 'speakers', 'recent-activity', 'con
 const SCROLL_OFFSET = 100
 
 const Nav = () => {
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const isHomePage = location.pathname === '/'
 
   const handleNavClick = useCallback((e, sectionId) => {
     e.preventDefault()
     setIsMenuOpen(false)
+    
+    // If not on home page, navigate to home first
+    if (!isHomePage) {
+      window.location.href = `/#${sectionId}`
+      return
+    }
+    
     smoothScrollTo(sectionId, 80)
-  }, [])
+  }, [isHomePage])
 
-  // Track active section on scroll
+  // Track active section on scroll (only on home page)
   useEffect(() => {
+    if (!isHomePage) return
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + SCROLL_OFFSET
 
@@ -36,7 +48,7 @@ const Nav = () => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHomePage])
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -92,13 +104,14 @@ const Nav = () => {
       <nav className="hidden min-[935px]:block fixed top-0 w-full z-[10000]" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className="flex items-center gap-2 focus:outline-none"
-            aria-label="Go to home section"
+            aria-label="Go to home"
+            onClick={() => setIsMenuOpen(false)}
           >
             <img src={getImagePath('/icons/ufuq-logo.webp')} alt="UFUQ Logo" className="h-[50px]" />
-          </a>
+          </Link>
           
           {/* Navigation Links - Center */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 items-center text-sm font-medium text-gray-400">
@@ -108,9 +121,9 @@ const Nav = () => {
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
                 className={`hover:text-white transition-colors focus:outline-none px-2 ${
-                  activeSection === link.id ? 'text-white' : ''
+                  isHomePage && activeSection === link.id ? 'text-white' : ''
                 }`}
-                aria-current={activeSection === link.id ? 'page' : undefined}
+                aria-current={isHomePage && activeSection === link.id ? 'page' : undefined}
               >
                 {link.label}
               </a>
@@ -134,13 +147,14 @@ const Nav = () => {
       <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[10000]" role="navigation" aria-label="Mobile navigation">
         <div className="px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className="flex items-center gap-2 focus:outline-none"
-            aria-label="Go to home section"
+            aria-label="Go to home"
+            onClick={() => setIsMenuOpen(false)}
           >
             <img src={getImagePath('/icons/ufuq-logo.webp')} alt="UFUQ Logo" className="h-[50px]" />
-          </a>
+          </Link>
           
           {/* Mobile Menu Button */}
           <button
@@ -178,9 +192,9 @@ const Nav = () => {
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
                 className={`text-lg font-semibold transition-colors focus:outline-none py-2 ${
-                  activeSection === link.id ? 'text-white' : 'text-gray-400 hover:text-white'
+                  isHomePage && activeSection === link.id ? 'text-white' : 'text-gray-400 hover:text-white'
                 }`}
-                aria-current={activeSection === link.id ? 'page' : undefined}
+                aria-current={isHomePage && activeSection === link.id ? 'page' : undefined}
               >
                 {link.label}
               </a>

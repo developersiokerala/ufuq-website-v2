@@ -1,43 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import InstagramSection from './components/InstagramSection'
-import Stats from './components/Stats'
+import Layout from './components/Layout'
 
-// Lazy load below-the-fold components for better initial load performance
-const Objectives = lazy(() => import('./components/Objectives'))
-const Events = lazy(() => import('./components/Events'))
-const Speakers = lazy(() => import('./components/Speakers'))
-const RecentActivity = lazy(() => import('./components/RecentActivity'))
-const QuoteSection = lazy(() => import('./components/QuoteSection'))
-const Partners = lazy(() => import('./components/Partners'))
-const Footer = lazy(() => import('./components/Footer'))
+const Home = lazy(() => import('./pages/Home'))
+const Hackathon = lazy(() => import('./pages/Hackathon'))
 
 function App() {
   return (
-    <div className="App">
-      <a href="#home" className="skip-to-content">
-        Skip to main content
-      </a>
-      <div className="bg-glow" aria-hidden="true"></div>
-      <Nav />
-      <main id="main-content">
-        <Hero />
-        <Stats />
-        <InstagramSection />
-        <Suspense fallback={<div className="min-h-screen" />}>
-          <Objectives />
-          <Events />
-          <Speakers />
-          <RecentActivity />
-          <Partners />
-          <QuoteSection />
+    <Router>
+      <Layout>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-gray-400">Loading...</div></div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/hackathon" element={<Hackathon />} />
+          </Routes>
         </Suspense>
-      </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
-    </div>
+      </Layout>
+    </Router>
   )
 }
 
