@@ -22,6 +22,55 @@ const PARTNERS = [
     image: '/images/partners/Technodot.jpg',
     description: 'Edu Tech Partner',
     color: 'from-emerald-500 to-teal-600'
+  },
+  {
+    id: 4,
+    name: 'Animation Campus',
+    image: '/images/partners/Animation Campus.jpg.jpeg',
+    description: 'Animation & Design Partner',
+    color: 'from-purple-500 to-violet-600'
+  },
+  {
+    id: 5,
+    name: 'Campus Alive',
+    image: '/images/partners/Campus Alive.jpg.jpeg',
+    description: 'Campus Engagement Partner',
+    color: 'from-green-500 to-emerald-600'
+  },
+  {
+    id: 6,
+    name: 'Entri',
+    image: '/images/partners/Entri.jpg.jpeg',
+    description: 'Learning Platform Partner',
+    color: 'from-cyan-500 to-blue-600'
+  },
+  {
+    id: 7,
+    name: 'Nexora',
+    image: '/images/partners/Nexora.jpg.jpeg',
+    description: 'Innovation Partner',
+    color: 'from-pink-500 to-rose-600'
+  },
+  {
+    id: 8,
+    name: 'Rapidrops',
+    image: '/images/partners/Rapidrops.jpg.jpeg',
+    description: 'Tech Solutions Partner',
+    color: 'from-indigo-500 to-purple-600'
+  },
+  {
+    id: 9,
+    name: 'Rec',
+    image: '/images/partners/Rec.jpg.jpeg',
+    description: 'Media Partner',
+    color: 'from-red-500 to-orange-600'
+  },
+  {
+    id: 10,
+    name: 'Varikka',
+    image: '/images/partners/Varikka.jpg.jpeg',
+    description: 'Creative Partner',
+    color: 'from-amber-500 to-yellow-600'
   }
 ]
 
@@ -31,6 +80,8 @@ const Partners = () => {
   const [isPaused, setIsPaused] = useState(false)
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
+  const [swipeOffset, setSwipeOffset] = useState(0)
+  const [isSwiping, setIsSwiping] = useState(false)
 
   // Minimum swipe distance
   const minSwipeDistance = 50
@@ -58,18 +109,35 @@ const Partners = () => {
     setCurrentSlide((prev) => (prev + 1) % PARTNERS.length)
   }, [])
 
-  // Touch handlers for swipe
+  // Touch handlers for swipe with visual feedback
   const onTouchStart = (e) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
+    setIsSwiping(true)
+    setIsPaused(true)
   }
 
   const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX)
+    if (!touchStart) return
+    const currentTouch = e.targetTouches[0].clientX
+    setTouchEnd(currentTouch)
+    
+    // Calculate swipe offset for visual feedback
+    const offset = currentTouch - touchStart
+    // Limit the offset to prevent excessive swiping
+    const maxOffset = 100
+    const boundedOffset = Math.max(-maxOffset, Math.min(maxOffset, offset))
+    setSwipeOffset(boundedOffset)
   }
 
   const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
+    setIsSwiping(false)
+    
+    if (!touchStart || !touchEnd) {
+      setSwipeOffset(0)
+      setIsPaused(false)
+      return
+    }
     
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > minSwipeDistance
@@ -77,10 +145,17 @@ const Partners = () => {
 
     if (isLeftSwipe) {
       goToNext()
-    }
-    if (isRightSwipe) {
+    } else if (isRightSwipe) {
       goToPrevious()
     }
+    
+    // Reset swipe offset with animation
+    setSwipeOffset(0)
+    
+    // Resume auto-scroll after a delay
+    setTimeout(() => {
+      setIsPaused(false)
+    }, 300)
   }
 
   // Keyboard navigation
@@ -105,32 +180,43 @@ const Partners = () => {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      style={{ touchAction: 'pan-y pinch-zoom' }}
     >
       <div className="pro-card border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl hover:border-indigo-500/30 transition-all duration-300">
         {/* Carousel Content */}
-        <div className="relative aspect-[21/9] w-full overflow-hidden bg-gradient-to-br from-indigo-900/10 via-purple-900/10 to-transparent">
-          {PARTNERS.map((partner, idx) => (
-            <div
-              key={partner.id}
-              className="absolute inset-0 w-full h-full transition-all duration-700 ease-in-out"
-              style={{ 
-                transform: `translateX(${(idx - currentSlide) * 100}%)`,
-                opacity: idx === currentSlide ? 1 : 0,
-                zIndex: idx === currentSlide ? 1 : 0
-              }}
-            >
-              <div className="relative w-full h-full">
-                <img
-                  src={partner.image}
-                  alt={partner.name}
-                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading={idx === 0 ? "eager" : "lazy"}
-                />
-                {/* Dark shade overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+        <div className="relative aspect-[21/9] w-full overflow-hidden bg-gradient-to-br from-indigo-900/10 via-purple-900/10 to-transparent select-none">
+          {PARTNERS.map((partner, idx) => {
+            const isCurrentSlide = idx === currentSlide
+            const baseTranslate = (idx - currentSlide) * 100
+            // Add swipe offset only to visible slides during swiping
+            const swipeAdjustment = isSwiping && Math.abs(idx - currentSlide) <= 1 
+              ? (swipeOffset / window.innerWidth) * 100 
+              : 0
+            
+            return (
+              <div
+                key={partner.id}
+                className={`absolute inset-0 w-full h-full ${isSwiping ? 'transition-none' : 'transition-all duration-700 ease-in-out'}`}
+                style={{ 
+                  transform: `translateX(${baseTranslate + swipeAdjustment}%)`,
+                  opacity: isCurrentSlide ? 1 : 0,
+                  zIndex: isCurrentSlide ? 1 : 0
+                }}
+              >
+                <div className="relative w-full h-full">
+                  <img
+                    src={partner.image}
+                    alt={partner.name}
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02] pointer-events-none"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    draggable="false"
+                  />
+                  {/* Dark shade overlay at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
 
           {/* Navigation Arrows */}
           <button
@@ -198,16 +284,6 @@ const Partners = () => {
                  }} />
           )}
         </div>
-      </div>
-
-      {/* Partner Info */}
-      <div className="mt-4 text-center">
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-1 transition-all duration-500">
-          {PARTNERS[currentSlide].name}
-        </h3>
-        <p className="text-sm md:text-base text-gray-400 transition-all duration-500">
-          {PARTNERS[currentSlide].description}
-        </p>
       </div>
     </div>
   )
