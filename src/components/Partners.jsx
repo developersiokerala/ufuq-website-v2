@@ -4,74 +4,74 @@ import { useReveal } from '../hooks/useReveal'
 const PARTNERS = [
   {
     id: 1,
-    name: 'D4Media',
-    image: '/images/partners/D4.jpg',
-    description: 'Multi Media Partner',
-    color: 'from-orange-500 to-pink-600'
-  },
-  {
-    id: 2,
     name: 'EventHex.ai',
     image: '/images/partners/EventHex.jpg',
     description: 'Event Tech Partner',
     color: 'from-blue-500 to-indigo-600'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Technodot',
     image: '/images/partners/Technodot.jpg',
     description: 'Edu Tech Partner',
     color: 'from-emerald-500 to-teal-600'
   },
   {
-    id: 4,
-    name: 'Animation Campus',
-    image: '/images/partners/Animation Campus.jpg.jpeg',
-    description: 'Animation & Design Partner',
-    color: 'from-purple-500 to-violet-600'
-  },
-  {
-    id: 5,
-    name: 'Campus Alive',
-    image: '/images/partners/Campus Alive.jpg.jpeg',
-    description: 'Campus Engagement Partner',
-    color: 'from-green-500 to-emerald-600'
-  },
-  {
-    id: 6,
+    id: 3,
     name: 'Entri',
     image: '/images/partners/Entri.jpg.jpeg',
     description: 'Learning Platform Partner',
     color: 'from-cyan-500 to-blue-600'
   },
   {
-    id: 7,
+    id: 4,
     name: 'Nexora',
     image: '/images/partners/Nexora.jpg.jpeg',
     description: 'Innovation Partner',
     color: 'from-pink-500 to-rose-600'
   },
   {
-    id: 8,
+    id: 5,
     name: 'Rapidrops',
     image: '/images/partners/Rapidrops.jpg.jpeg',
     description: 'Tech Solutions Partner',
     color: 'from-indigo-500 to-purple-600'
   },
   {
-    id: 9,
+    id: 6,
+    name: 'D4Media',
+    image: '/images/partners/D4.jpg',
+    description: 'Multi Media Partner',
+    color: 'from-orange-500 to-pink-600'
+  },
+  {
+    id: 7,
     name: 'Rec',
     image: '/images/partners/Rec.jpg.jpeg',
     description: 'Media Partner',
     color: 'from-red-500 to-orange-600'
   },
   {
-    id: 10,
+    id: 8,
+    name: 'Animation Campus',
+    image: '/images/partners/Animation Campus.jpg.jpeg',
+    description: 'Animation & Design Partner',
+    color: 'from-purple-500 to-violet-600'
+  },
+  {
+    id: 9,
     name: 'Varikka',
     image: '/images/partners/Varikka.jpg.jpeg',
     description: 'Creative Partner',
     color: 'from-amber-500 to-yellow-600'
-  }
+  },
+  {
+    id: 10,
+    name: 'Campus Alive',
+    image: '/images/partners/Campus Alive.jpg.jpeg',
+    description: 'Campus Engagement Partner',
+    color: 'from-green-500 to-emerald-600'
+  },
 ]
 
 const Partners = () => {
@@ -174,6 +174,7 @@ const Partners = () => {
 
   const CarouselWindow = () => (
     <div 
+      name="partners"
       className="mb-12 relative group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
